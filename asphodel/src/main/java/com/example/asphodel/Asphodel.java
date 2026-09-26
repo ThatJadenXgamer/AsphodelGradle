@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 
 public class Asphodel {
 
+    private static final int EXAMPLE = 26;
+
     /*
      * Welcome to the Asphodel Gradle Template!
      * here is a crash-course on what all of the source-sets mean and how to get started using this environment for mod development
@@ -48,6 +50,12 @@ public class Asphodel {
      * loader and version contributes its members in the order the directives appear. When two matching
      * directives contribute the same member the later one wins, so order them from most general to most
      * specific.
+     *
+     * Any member of a contributor can be opted out of the merge with an exclude directive placed directly above it, like so:
+     *      // asphodel::exclude
+     *      public static int sharedField = 0;
+     * The excluded member is not copied into the primary class and this is useful when the contributor needs-
+     * to reference a member that already exists in the primary; the contributor declares a local copy so its own code compiles standalone.
      *
      * The source-sets you can pull from are:
      *   asphodel/src/main/java              shared by every loader and every version
