@@ -73,9 +73,11 @@ def mergeTask = tasks.register('mergeSources', asphodel.gradle.MergeSourcesTask)
 
     targetLoader.set(loader)
     targetVersion.set(mcVer)
+    projectDirectory.set(project.layout.projectDirectory)
 
     outputJavaDir.set(layout.buildDirectory.dir('generated/merged/java'))
     outputResourceDir.set(layout.buildDirectory.dir('generated/merged/resources'))
+    stateFile.set(layout.buildDirectory.file('generated/merged/.asphodel-state'))
 }
 
 sourceSets.main.java.srcDir project.file('src/main/java')
