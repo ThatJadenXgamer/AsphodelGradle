@@ -23,6 +23,7 @@
             <option value="$PROJECT_DIR$/1.20.1/forge" />
             <option value="$PROJECT_DIR$/1.21.1/fabric" />
             <option value="$PROJECT_DIR$/1.21.1/neoforge" />
+            <option value="$PROJECT_DIR$/asphodel" />
             <option value="$PROJECT_DIR$/buildSrc" />
           </set>
         </option>
