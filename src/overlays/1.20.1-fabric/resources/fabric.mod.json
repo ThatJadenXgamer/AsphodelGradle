@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${version}",
+  "name": "${mod_name}",
+  "description": "${description}",
+  "authors": [
+    "${mod_author}"
+  ],
+  "license": "${license}",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.example.mod.fabric.ExampleFabric"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${fabric_loader}",
+    "fabric-api": "*",
+    "minecraft": "${mc}",
+    "java": ">=${java}"
+  }
+}

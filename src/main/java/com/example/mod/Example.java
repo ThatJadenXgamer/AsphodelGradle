@@ -1,6 +1,10 @@
-# AsphodelGradle
+// asphodel::merge -> loader=*, version=1.20.1 -> com.example.mod.Example20
+// asphodel::merge -> loader=*, version=1.21.1 -> com.example.mod.Example21
+package com.example.mod;
 
-// WIP //
+import java.util.logging.Logger;
+
+public class Example {
 
     /*
      * Welcome to the Asphodel Gradle Template!
@@ -62,3 +66,15 @@
      * If you need to call a version-specific or loader-specific method from shared code, treat it here asa stub-
      * and provide the real implementation in the appropriate contribution class.
      */
+
+    private static final int EXAMPLE = 26;
+
+    public static final String MOD_ID = "example";
+    public static final Logger LOGGER = Logger.getLogger("Example Mod");
+
+    public static void sharedSetup() {
+    }
+
+    public static void setup20() {} // stub
+    public static void setup21() {} // stub
+}

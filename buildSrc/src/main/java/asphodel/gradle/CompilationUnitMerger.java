@@ -41,7 +41,13 @@ public final class CompilationUnitMerger {
         NodeList<TypeDeclaration<?>> mergedTypes = new NodeList<>();
         for (TypeDeclaration<?> t : primary.unit().getTypes()) mergedTypes.add(mergeType(t, contributionTypes));
         out.setTypes(mergedTypes);
+        stripComments(out);
         return out;
+    }
+
+    private void stripComments(CompilationUnit unit) {
+        new ArrayList<>(unit.getAllContainedComments()).forEach(Comment::remove);
+        unit.getComment().ifPresent(Comment::remove);
     }
 
     private TypeDeclaration<?> mergeType(TypeDeclaration<?> primary, List<TypeDeclaration<?>> contributions) {
